@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style>
+          body{
+              width: 100vw;
+              height: 100vh;
+              background-color:#CEEDDB ;
+              margin: 0px;
+              
+          }
+          header{
+              width: 100vw;
+              height: 40px;
+              background-color:#544E61;
+              display: flex; 
+              flex-direction: row;
+              justify-content: space-between;
+              color:#BC3908;
+            }
+            .text{
+                padding: 5px;
+                margin:5px ;
+
+            }
+            #btn{
+                height: 30px;
+                width: 70px;
+                background-color: #BC3908;
+                border-radius: 5px;
+               padding: 2px;
+               margin: 2px;
+               color:white;
+            }
+            section{
+                 
+                width: 40%;
+                margin: auto;
+                margin-top: 150px;
+                padding: 10px;
+                background-color: #67597A;
+                border:1px solid ;
+                border-radius: 5px;
+                
+            }
+            p{
+                font-size: 1.5rem;
+            }
+      </style>  
+    </head>
+    <body>
+        <header>
+          <div class="text">Simple Hex</div>
+          <div class="text">Background Changer</div>
+        </header>
+        <section>
+              <p>Background Color: <span id="color">#CEEDDB</span></p>
+            <div id="btn">Click me.</div>
+        </section>
+    </body>
+    <script>
+        //creating an array of colors to choose from
+        const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
+        //accessing the dom elements with js
+        const btn = document.getElementById("btn");
+        const color = document.getElementById("color");
+
+        function getRandomNumber() {
+            //generating rounded down numbers between 0 and 3
+            return (Math.random() * colors.length);
+        }
+
+        //adding an event listener to the dom element 'btn'
+        btn.addEventListener("click",function(){
+         const randomNumber =getRandomNumber;
+         console.log(randomNumber);
+         //setting the background color to the array of colours
+         document.body.style.backgroundColor = colors[randomNumber];  
+         //getting the text content of a color
+         color.textContent = colors[randomNumber];
+        });
+
+        //function to make the program generate random numbers for the colors
+        
+        
+      
+    </script>
+</html>
