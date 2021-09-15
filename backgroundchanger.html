@@ -64,23 +64,20 @@
         //accessing the dom elements with js
         const btn = document.getElementById("btn");
         const color = document.getElementById("color");
-
-        function getRandomNumber() {
-            //generating rounded down numbers between 0 and 3
-            return (Math.random() * colors.length);
-        }
-
-        //adding an event listener to the dom element 'btn'
+  //adding an event listener to the dom element 'btn'
         btn.addEventListener("click",function(){
-         const randomNumber =getRandomNumber;
+         const randomNumber =getRandomNumber();
          console.log(randomNumber);
          //setting the background color to the array of colours
          document.body.style.backgroundColor = colors[randomNumber];  
          //getting the text content of a color
          color.textContent = colors[randomNumber];
-        });
-
+        }); 
         //function to make the program generate random numbers for the colors
+        function getRandomNumber() {
+            //generating rounded down numbers between 0 and 3
+            return Math.floor(Math.random() * colors.length);
+        }
         
         
       

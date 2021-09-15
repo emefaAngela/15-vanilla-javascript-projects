@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+
+    <!-- styles -->
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: azure;
+            color: black;
+            place-items: center;
+        }
+        .container{
+            width: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .btn-center{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .btn{
+            width: 90px;
+            height: 20px;
+            border-radius: 3px;
+            border: solid black ;
+            font-size: 1rem;
+
+        }
+        h1{
+            color: brown;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+    <div><h3>Counter</h3></div>
+    <div><h1><span id="count"> 0</span></h1></div>
+    <div class="btn-center">
+        <div class="btn" id="decrease">DECREASE</div>
+        <div class="btn" id="reset">RESET</div>
+        <div class="btn" id="increase">INCREASE</div>
+    </div>
+      </div>
+    <!-- javascript -->
+    <script>
+        //setting initial count
+        let count =0;
+
+        //accessing dom elements
+        const value = document.getElementById('count');
+        const decrease = document.getElementById('decrease');
+        const reset = document.getElementById('reset');
+        const increase = document.getElementById('increase');
+
+         
+        //adding event listeners and functions to elements
+        decrease.addEventListener("click", function(){
+          count = count - 1;
+          //updating count element
+        value.textContent = count;
+        });
+
+        reset.addEventListener("click", function(){
+             count = 0;
+             value.textContent = count;
+             
+        });
+
+        increase.addEventListener("click", function(){
+            count = count + 1;
+            value.textContent = count;
+        });
+
+        
+
+    </script>
+  </body>
+</html>
